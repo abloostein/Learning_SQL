@@ -1,0 +1,38 @@
+CREATE TABLE famous_people (id INTEGER PRIMARY KEY, name TEXT);
+INSERT INTO famous_people VALUES (1, "Ashton Kutcher");
+INSERT INTO famous_people VALUES (2, "Mila Kunis");
+INSERT INTO famous_people VALUES (3, "J.K. Rowling");
+INSERT INTO famous_people VALUES (4, "Donald Trump");
+INSERT INTO famous_people VALUES (5, "Hillary Clinton");
+INSERT INTO famous_people VALUES (6, "Bernie Sanders");
+INSERT INTO famous_people VALUES (7, "Pascal");
+INSERT INTO famous_people VALUES (8, "Bernoulli");
+
+
+CREATE TABLE cast  (id INTEGER PRIMARY KEY, person_id INTEGER, movie TEXT);
+INSERT INTO cast VALUES (1, 1, "That '70s Show");
+INSERT INTO cast VALUES (2, 1, "The Ranch");
+INSERT INTO cast VALUES (3, 2, "That '70s Show");
+
+CREATE TABLE fame (id INTEGER PRIMARY KEY, person_id INTEGER, reason TEXT);
+INSERT INTO fame VALUES(1, 1, "actor");
+INSERT INTO fame VALUES (2, 2, "actress");
+INSERT INTO fame VALUES (3, 3, "author");
+INSERT INTO fame VALUES (4, 4, "piece of shit");
+INSERT INTO fame VALUES (5, 5, "politician");
+INSERT INTO fame VALUES (6, 6, "politician");
+INSERT INTO fame VALUES (7, 7, "Triangle maker");
+INSERT INTO fame VALUES (8, 8, "Stats");
+INSERT INTO fame VALUES (9, 9, "mathemagician");
+
+CREATE TABLE marriage (id INTEGER PRIMARY KEY, person1_id INTEGER, person2_id INTEGER);
+INSERT INTO marriage VALUES(1, 1, 2);
+INSERT INTO marriage VALUES(2, 2, 1);
+
+SELECT a.name, b.name as partner FROM marriage JOIN famous_people a ON a.id=marriage.person1_id JOIN famous_people b ON b.id=marriage.person2_id;
+
+SELECT movie, name FROM cast JOIN famous_people ON person_id = famous_people.id ORDER BY movie;
+
+SELECT name, movie FROM famous_people LEFT OUTER JOIN cast ON person_id = famous_people.id ORDER BY name;
+
+SELECT name, reason FROM famous_people LEFT OUTER JOIN fame ON famous_people.id = person_id;
