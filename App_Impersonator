@@ -1,0 +1,23 @@
+CREATE TABLE high_scores (id INTEGER PRIMARY KEY, username TEXT, score INTEGER);
+
+INSERT INTO high_scores VALUES (1, "joeshmoe101", 305);
+INSERT INTO high_scores VALUES (2, "prettydaisy", 500);
+INSERT INTO high_scores VALUES (3, "gamewinner1", 1260);
+
+SELECT username, score FROM high_scores ORDER BY score DESC;
+
+UPDATE high_scores SET score = 126 WHERE username = "gamewinner1";
+
+SELECT username, score FROM high_scores ORDER BY score DESC;
+
+ALTER TABLE high_scores ADD fullname TEXT default "unknown";
+
+SELECT fullname FROM high_scores;
+
+INSERT INTO high_scores VALUES (4, "thebest", 1000, "Better Man");
+
+SELECT fullname FROM high_scores ORDER BY score DESC;
+
+DELETE FROM high_scores WHERE username = "gamewinner1";
+
+SELECT * FROM high_scores;
