@@ -1,0 +1,18 @@
+CREATE TABLE store (id INTEGER PRIMARY KEY, name TEXT, quantity INTEGER, stock TEXT, section INTEGER, price REAL);
+INSERT INTO store VALUES (1, "pink shirt", 16, "yes", 2, 15.99);
+INSERT INTO STORE VALUES (2, "blue jeans", 3, "yes", 4, 24.99);
+INSERT INTO store VALUES (3, "boots", 10, "yes", 1, 59.95);
+INSERT INTO store VALUES (4, "blue shirt", 2, "yes", 2, 15.99);
+INSERT INTO store VALUES (5, "sweater", 6, "yes", 3, 21.95);
+INSERT INTO store VALUES (6, "green shirt", 3, "yes", 2, 15.99);
+INSERT INTO store VALUES (7, "khakis", 15, "yes", 4, 24.99);
+INSERT INTO store VALUES (8, "shorts", 10, "fyes", 4, 16.95);
+INSERT INTO store VALUES (9, "hair bow", 35, "yes", 5, 2.99);
+INSERT INTO store VALUES (10, "headbands", 12, "yes", 5, 3.99);
+INSERT INTO store VALUES (11, "scarfs", 9, "yes", 5, 12.95);
+INSERT INTO store VALUES (12, "swimsuits", 0, "no", 1, 39.95);
+INSERT INTO store VALUES (13, "flip flops", 0, "no", 1, 1.99);
+INSERT INTO store VALUES (14, "bags", 2, "yes", 5, 12.99);
+INSERT INTO store VALUES (15, "wallet", 1, "yes", 5, 11.00);
+SELECT * FROM store ORDER BY price;
+SELECT sum(quantity) FROM store;
